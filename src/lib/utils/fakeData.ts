@@ -20,18 +20,18 @@ const createUser = () => {
 
   return {
     id: getId(),
-    firstName: faker.name.firstName(),
-    lastName: faker.name.lastName(),
-    username: faker.internet.userName(),
+    firstName: faker.person.firstName(),
+    lastName: faker.person.lastName(),
+    username: faker.internet.username(),
     age: randomNumber(18, 65),
     email: faker.internet.email(),
     phone: faker.phone.number(),
     address: {
-      city: faker.address.city(),
-      street: faker.address.streetAddress(),
+      city: faker.location.city(),
+      street: faker.location.streetAddress(),
     },
     job: {
-      position: faker.name.jobTitle(),
+      position: faker.person.jobTitle(),
       company: faker.company.name(),
     },
     visits: Math.floor(Math.random() * 100),
@@ -48,5 +48,7 @@ const createUser = () => {
 const getFakeData = (length: number) => {
   return range(length).map(() => createUser())
 }
+
+export type TUser = ReturnType<typeof createUser>
 
 export { getFakeData }
