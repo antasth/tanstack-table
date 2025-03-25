@@ -26,22 +26,33 @@ function Table() {
   return (
     <Box>
       <Box className="table">
-        {table.getHeaderGroups().map((headerGroup) => (
-          <Box className="table-row" key={headerGroup.id}>
-            {headerGroup.headers.map((header) => (
-              <Box className="table-cell" key={header.id}>
+        {/* HEADERS */}
+        <Box className="table-row">
+          {table.getHeaderGroups().flatMap((headerGroup) =>
+            headerGroup.headers.map((header) => (
+              <Box
+                className="table-header"
+                key={header.id}
+                width={`${header.getSize()}px`}
+              >
                 {flexRender(
                   header.column.columnDef.header,
                   header.getContext()
                 )}
               </Box>
-            ))}
-          </Box>
-        ))}
+            ))
+          )}
+        </Box>
+
+        {/* DATA */}
         {table.getRowModel().rows.map((row) => (
           <Box className="table-row" key={row.id}>
             {row.getVisibleCells().map((cell) => (
-              <Box className="table-cell" key={cell.id}>
+              <Box
+                className="table-cell"
+                key={cell.id}
+                width={`${cell.column.getSize()}px`}
+              >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
               </Box>
             ))}
