@@ -1,16 +1,18 @@
-import { ColumnDef } from '@tanstack/react-table'
-import { TUser } from '@utils/fakeData'
+import { ColumnDef } from '@tanstack/react-table';
+import { TUser } from '@utils/fakeData';
 
 export const columns: ColumnDef<TUser>[] = [
   {
     accessorKey: 'firstName',
     header: 'First Name',
     cell: (info) => info.getValue<string>(),
+    size: 100,
   },
   {
     accessorKey: 'lastName',
     header: 'Last Name',
     cell: (info) => info.getValue<string>(),
+    size: 100,
   },
   {
     accessorKey: 'username',
@@ -21,11 +23,13 @@ export const columns: ColumnDef<TUser>[] = [
     accessorKey: 'age',
     header: 'Age',
     cell: (info) => info.getValue<string>(),
+    size: 40,
   },
   {
     accessorKey: 'email',
     header: 'Email',
     cell: (info) => info.getValue<string>(),
+    size: 250,
   },
   {
     accessorKey: 'phone',
@@ -52,11 +56,13 @@ export const columns: ColumnDef<TUser>[] = [
     accessorKey: 'visits',
     header: 'Visits',
     cell: (info) => info.getValue<string>(),
+    size: 50,
   },
   {
     accessorKey: 'progress',
     header: 'Progress',
     cell: (info) => info.getValue<string>(),
+    size: 80,
   },
   {
     accessorKey: 'status',
