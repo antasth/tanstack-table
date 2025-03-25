@@ -38,6 +38,15 @@ function Table() {
             ))}
           </Box>
         ))}
+        {table.getRowModel().rows.map((row) => (
+          <Box className="table-row" key={row.id}>
+            {row.getVisibleCells().map((cell) => (
+              <Box className="table-cell" key={cell.id}>
+                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+              </Box>
+            ))}
+          </Box>
+        ))}
       </Box>
     </Box>
   )
