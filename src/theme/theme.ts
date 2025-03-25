@@ -3,32 +3,52 @@ import { createSystem, defineConfig } from '@chakra-ui/react'
 const config = defineConfig({
   globalCss: {
     'html, body': {
-      backgroundColor: '#3e626b',
+      backgroundColor: '{colors.primary}',
     },
     '.table': {
-      border: '1px solid #4242424d',
+      display: 'block',
+      border: '1px solid {colors.borderLight}',
       borderRadius: '10px',
+      overflow: 'hidden',
     },
     '.table-row': {
       display: 'flex',
-      gap: '10px',
+      width: '100%',
+      border: '1px solid {colors.borderLight}',
     },
-    '.table-cell': {
+    '.table-header, .table-cell': {
+      flex: '1 0 auto',
+      minWidth: 0,
+      padding: '0.5rem',
+      borderRight: '1px solid {colors.borderLight}',
+      '&:last-child': {
+        borderRight: 'none',
+      },
+    },
+    '.table-header': {
       position: 'relative',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
       padding: '0.5rem',
       fontWeight: 'bold',
       fontSize: 'xs',
-      textWrap: 'nowrap',
       textTransform: 'uppercase',
       textAlign: 'center',
+    },
+    '.table-cell': {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: 'fit-content',
+      textWrap: 'wrap',
     },
   },
   theme: {
     tokens: {
-      colors: {},
+      colors: {
+        primary: { value: '#232D3F' },
+        secondary: { value: '#005B41' },
+        accent: { value: '#008170' },
+        borderLight: { value: '#faf0e642' },
+      },
     },
   },
 })
