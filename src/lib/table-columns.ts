@@ -35,12 +35,18 @@ export const columns: ColumnDef<TUser>[] = [
   {
     accessorKey: 'address',
     header: 'Address',
-    cell: (info) => info.getValue<string>(),
+    cell: (info) => {
+      const address = info.getValue<{ city: string; street: string }>()
+      return `${address.city}, ${address.street}`
+    },
   },
   {
     accessorKey: 'job',
     header: 'Job',
-    cell: (info) => info.getValue<string>(),
+    cell: (info) => {
+      const job = info.getValue<{ position: string; company: string }>()
+      return `${job.company}, ${job.position}`
+    },
   },
   {
     accessorKey: 'visits',
