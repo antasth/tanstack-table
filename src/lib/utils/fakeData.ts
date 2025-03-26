@@ -35,7 +35,6 @@ const createUser = () => {
       company: faker.company.name(),
     },
     visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
     status:
       statusChance > 0.66
         ? 'relationship'

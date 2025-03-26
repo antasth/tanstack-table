@@ -1,5 +1,5 @@
-import { ColumnDef } from '@tanstack/react-table';
-import { TUser } from '@utils/fakeData';
+import { ColumnDef } from '@tanstack/react-table'
+import { TUser } from '@utils/fakeData'
 
 export const columns: ColumnDef<TUser>[] = [
   {
@@ -57,12 +57,6 @@ export const columns: ColumnDef<TUser>[] = [
     header: 'Visits',
     cell: (info) => info.getValue<string>(),
     size: 50,
-  },
-  {
-    accessorKey: 'progress',
-    header: 'Progress',
-    cell: (info) => info.getValue<string>(),
-    size: 80,
   },
   {
     accessorKey: 'status',
