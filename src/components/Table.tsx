@@ -17,6 +17,7 @@ function Table() {
   const table = useReactTable({
     data: users,
     columns,
+    columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -39,6 +40,13 @@ function Table() {
                   header.column.columnDef.header,
                   header.getContext()
                 )}
+                <Box
+                  onMouseDown={header.getResizeHandler()}
+                  onTouchStart={header.getResizeHandler()}
+                  className={`resizer ${
+                    header.column.getIsResizing() ? 'isResizing' : ''
+                  }`}
+                ></Box>
               </Box>
             ))
           )}

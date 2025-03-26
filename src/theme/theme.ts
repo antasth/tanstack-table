@@ -21,6 +21,7 @@ const config = defineConfig({
       minWidth: 0,
       padding: '0.5rem',
       borderRight: '1px solid {colors.borderLight}',
+      overflow: 'hidden',
       '&:last-child': {
         borderRight: 'none',
       },
@@ -40,16 +41,31 @@ const config = defineConfig({
       width: 'fit-content',
       textWrap: 'wrap',
     },
+    '.resizer': {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      height: '100%',
+      width: '2px',
+      background: '{colors.accent}',
+      cursor: 'col-resize',
+      userSelect: 'none',
+      touchAction: 'none',
+      borderRadius: '6px',
+      opacity: 0,
+      zIndex: 1,
+      transition: 'opacity 0.2s ease',
+    },
+    '.resizer.isResizing': {
+      background: '{colors.accent}',
+      opacity: 1,
+    },
+    '.table-header:hover .resizer': {
+      opacity: 1,
+    },
   },
   theme: {
-    tokens: {
-      colors: {
-        primary: { value: '#232D3F' },
-        secondary: { value: '#005B41' },
-        accent: { value: '#008170' },
-        borderLight: { value: '#faf0e642' },
-      },
-    },
+    tokens: {},
   },
 })
 
