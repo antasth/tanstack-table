@@ -65,7 +65,33 @@ const config = defineConfig({
     },
   },
   theme: {
-    tokens: {},
+    tokens: {
+      colors: {
+        // Основные цвета
+        primary: { value: '#232D3F' },
+        secondary: { value: '#2C3E50' },
+        accent: { value: '#3498DB' },
+
+        // Дополнительные цвета
+        success: { value: '#27AE60' },
+        warning: { value: '#F39C12' },
+        danger: { value: '#E74C3C' },
+        info: { value: '#2980B9' },
+
+        // Текст и фон
+        text: { value: '#ECF0F1' },
+        textSecondary: { value: '#BDC3C7' },
+        background: { value: '#1A202C' },
+        surface: { value: '#2D3748' },
+
+        // Границы
+        borderLight: { value: '#4A5568' },
+        borderDark: { value: '#2D3748' },
+
+        // Специальные
+        highlight: { value: '#9B59B6' },
+      },
+    },
   },
 })
 
