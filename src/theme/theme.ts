@@ -9,7 +9,7 @@ const config = defineConfig({
       display: 'block',
       border: '1px solid {colors.borderLight}',
       borderRadius: '10px',
-      fontSize: '{fontSizes.lg}',
+      fontSize: '{fontSizes.md}',
       overflow: 'hidden',
     },
     '.table-row': {
