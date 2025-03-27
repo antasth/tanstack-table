@@ -22,6 +22,14 @@ function Table() {
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
+    meta: {
+      updateUsers: (rowIndex, columnId, value) =>
+        setUsers((prev) =>
+          prev.map((row, index) =>
+            index === rowIndex ? { ...prev[rowIndex], [columnId]: value } : row
+          )
+        ),
+    },
   })
 
   return (
