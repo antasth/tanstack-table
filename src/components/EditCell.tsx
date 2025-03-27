@@ -9,7 +9,7 @@ interface ICustomCellProps<TData, TValue> {
   table: CellContext<TData, TValue>['table']
 }
 
-const Cell = <TData, TValue>({
+const EditCell = <TData, TValue>({
   getValue,
   row,
   column,
@@ -48,4 +48,4 @@ const Cell = <TData, TValue>({
   )
 }
 
-export { Cell }
+export { EditCell }
