@@ -26,14 +26,7 @@ const createUser = () => {
     age: randomNumber(18, 65),
     email: faker.internet.email(),
     phone: faker.phone.number(),
-    address: {
-      city: faker.location.city(),
-      street: faker.location.streetAddress(),
-    },
-    job: {
-      position: faker.person.jobTitle(),
-      company: faker.company.name(),
-    },
+
     visits: Math.floor(Math.random() * 100),
     status:
       statusChance > 0.66
