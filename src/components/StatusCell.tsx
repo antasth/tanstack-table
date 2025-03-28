@@ -30,6 +30,9 @@ const StatusCell = <TData, TValue>({
           fontSize="{fontSizes.lg}"
           backgroundColor="{colors.surface}"
           textOverflow="ellipsis"
+          _focus={{
+            outline: 'none',
+          }}
         >
           {status}
         </Button>
