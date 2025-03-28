@@ -1,7 +1,6 @@
 import { statuses } from '@/lib/utils/fakeData'
 import { ICellProps } from '@/types/types'
 import { Button, Menu, Portal } from '@chakra-ui/react'
-import { useState } from 'react'
 
 const StatusCell = <TData, TValue>({
   getValue,
@@ -9,8 +8,7 @@ const StatusCell = <TData, TValue>({
   column,
   table,
 }: ICellProps<TData, TValue>) => {
-  const initialValue = getValue()
-  const [status, setStatus] = useState(initialValue)
+  const initialStatus = getValue()
 
   const handleStatusChange = (userStatus: string) => {
     table.options.meta?.updateUsers(
@@ -18,7 +16,6 @@ const StatusCell = <TData, TValue>({
       column.id as keyof TData,
       userStatus as TData[keyof TData]
     )
-    setStatus(userStatus)
   }
 
   return (
@@ -34,7 +31,7 @@ const StatusCell = <TData, TValue>({
             outline: 'none',
           }}
         >
-          {status}
+          {initialStatus}
         </Button>
       </Menu.Trigger>
       <Portal>
