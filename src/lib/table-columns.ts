@@ -1,4 +1,5 @@
 import { EditCell } from '@/components/EditCell'
+import { StatusCell } from '@/components/StatusCell'
 import { ColumnDef } from '@tanstack/react-table'
 import { TUser } from '@utils/fakeData'
 
@@ -26,6 +27,7 @@ export const columns: ColumnDef<TUser>[] = [
     accessorKey: 'age',
     header: 'Age',
     cell: EditCell,
+    size: 50,
     minSize: 50,
   },
   {
@@ -45,12 +47,13 @@ export const columns: ColumnDef<TUser>[] = [
     accessorKey: 'visits',
     header: 'Visits',
     cell: EditCell,
-    minSize: 50,
+    size: 100,
+    minSize: 100,
   },
   {
     accessorKey: 'status',
     header: 'Status',
-    cell: (info) => info.getValue<string>(),
-    minSize: 100,
+    cell: StatusCell,
+    minSize: 150,
   },
 ]

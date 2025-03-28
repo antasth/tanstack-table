@@ -1,5 +1,7 @@
 import { faker } from '@faker-js/faker'
 
+export const statuses = ['online', 'offline', 'away']
+
 const range = (length: number) => {
   const arr = []
   for (let i = 0; i < length; i++) {
@@ -17,6 +19,7 @@ const randomNumber = (min: number, max: number) => {
 
 const createUser = () => {
   const statusChance = Math.random()
+  const visits = Math.floor(Math.random() * 100)
 
   return {
     id: getId(),
@@ -27,13 +30,9 @@ const createUser = () => {
     email: faker.internet.email(),
     phone: faker.phone.number(),
 
-    visits: Math.floor(Math.random() * 100),
+    visits,
     status:
-      statusChance > 0.66
-        ? 'relationship'
-        : statusChance > 0.33
-        ? 'complicated'
-        : 'single',
+      statusChance > 0.75 ? 'online' : statusChance > 0.5 ? 'offline' : 'away',
   }
 }
 

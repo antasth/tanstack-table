@@ -10,9 +10,10 @@ import {
 } from '@tanstack/react-table'
 import { useState } from 'react'
 import { columns } from '../lib/table-columns'
+import { USERS_COUNT } from '@/lib/constants'
 
 function Table() {
-  const [users, setUsers] = useState<TUser[]>(getFakeData(5))
+  const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
 
   const table = useReactTable({
     data: users,
