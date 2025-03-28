@@ -1,6 +1,11 @@
-import { createSystem, defineConfig } from '@chakra-ui/react'
+import {
+  createSystem,
+  defaultConfig,
+  defineConfig,
+  mergeConfigs,
+} from '@chakra-ui/react'
 
-const config = defineConfig({
+const customConfig = defineConfig({
   globalCss: {
     'html, body': {
       backgroundColor: '{colors.primary}',
@@ -34,12 +39,15 @@ const config = defineConfig({
       fontSize: 'xs',
       textTransform: 'uppercase',
       textAlign: 'center',
+      background: '{colors.accent}',
     },
     '.table-cell': {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       width: 'fit-content',
+      padding: 0,
+      height: 'full',
       textWrap: 'wrap',
     },
     '.resizer': {
@@ -47,8 +55,8 @@ const config = defineConfig({
       top: 0,
       right: 0,
       height: '100%',
-      width: '2px',
-      background: '{colors.accent}',
+      width: '5px',
+      background: '{colors.warning}',
       cursor: 'col-resize',
       userSelect: 'none',
       touchAction: 'none',
@@ -58,7 +66,7 @@ const config = defineConfig({
       transition: 'opacity 0.2s ease',
     },
     '.resizer.isResizing': {
-      background: '{colors.accent}',
+      background: '{colors.warning}',
       opacity: 1,
     },
     '.table-header:hover .resizer': {
@@ -108,6 +116,7 @@ const config = defineConfig({
   },
 })
 
+const config = mergeConfigs(defaultConfig, customConfig)
 const system = createSystem(config)
 
 export { system }
