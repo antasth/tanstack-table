@@ -11,13 +11,21 @@ const EditCell = <TData, TValue>({
   const initialValue = getValue()
   const [value, setValue] = useState(initialValue)
 
-  const handleBlur = () => {
+  const updateUsers = () => {
     table.options.meta?.updateUsers(
       row.index,
       column.id as keyof TData,
       value as TData[keyof TData]
     )
   }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      updateUsers()
+      e.currentTarget.blur()
+    }
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setValue(e.target.value)
 
@@ -29,7 +37,8 @@ const EditCell = <TData, TValue>({
     <Input
       value={String(value)}
       onChange={handleInputChange}
-      onBlur={handleBlur}
+      onBlur={updateUsers}
+      onKeyDown={handleKeyDown}
       variant="outline"
       padding="2px"
       border="none"
