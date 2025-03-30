@@ -15,6 +15,7 @@ import { USERS_COUNT } from '@/lib/constants'
 function Table() {
   const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
 
+  console.log(users)
   const table = useReactTable({
     data: users,
     columns,

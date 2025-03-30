@@ -1,3 +1,4 @@
+import { DateCell } from '@/components/DateCell'
 import { EditCell } from '@/components/EditCell'
 import { StatusCell } from '@/components/StatusCell'
 import { ColumnDef } from '@tanstack/react-table'
@@ -17,6 +18,13 @@ export const columns: ColumnDef<TUser>[] = [
     minSize: 150,
   },
   {
+    accessorKey: 'age',
+    header: 'Age',
+    cell: EditCell,
+    size: 50,
+    minSize: 50,
+  },
+  {
     accessorKey: 'username',
     header: 'Username',
     cell: EditCell,
@@ -24,11 +32,10 @@ export const columns: ColumnDef<TUser>[] = [
     minSize: 150,
   },
   {
-    accessorKey: 'age',
-    header: 'Age',
-    cell: EditCell,
-    size: 50,
-    minSize: 50,
+    accessorKey: 'createdAt',
+    header: 'created At',
+    cell: DateCell,
+    minSize: 150,
   },
   {
     accessorKey: 'email',

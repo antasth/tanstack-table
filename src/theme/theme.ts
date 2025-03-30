@@ -71,6 +71,15 @@ const customConfig = defineConfig({
     '.table-header:hover .resizer': {
       opacity: 1,
     },
+    '.date-picker-wrapper': {
+      width: '100%',
+    },
+    '.date-picker-input': {
+      width: '100%',
+      padding: '8px 12px',
+      textAlign: 'center',
+      background: '{colors.surface}',
+    },
   },
   theme: {
     tokens: {

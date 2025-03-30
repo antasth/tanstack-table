@@ -45,6 +45,7 @@ const createUser = () => {
     age: randomNumber(18, 65),
     email: faker.internet.email(),
     phone: faker.phone.number(),
+    createdAt: faker.date.past(),
 
     visits,
     status:
