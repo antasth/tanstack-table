@@ -1,6 +1,22 @@
 import { faker } from '@faker-js/faker'
 
-export const statuses = ['online', 'offline', 'away']
+export const statuses = [
+  {
+    id: 1,
+    name: 'online',
+    color: 'status.online',
+  },
+  {
+    id: 2,
+    name: 'offline',
+    color: 'status.offline',
+  },
+  {
+    id: 3,
+    name: 'away',
+    color: 'status.away',
+  },
+]
 
 const range = (length: number) => {
   const arr = []
