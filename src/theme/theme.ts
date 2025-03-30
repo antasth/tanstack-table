@@ -110,6 +110,13 @@ const customConfig = defineConfig({
 
         // Специальные
         highlight: { value: '#9B59B6' },
+
+        // Статусы
+        status: {
+          online: { value: '#27AE60' },
+          offline: { value: '#E74C3C' },
+          away: { value: '#F39C12' },
+        },
       },
     },
   },
