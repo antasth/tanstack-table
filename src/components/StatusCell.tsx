@@ -1,6 +1,7 @@
 import { statuses } from '@/lib/utils/fakeData'
 import { ICellProps } from '@/types/types'
 import { Button, Menu, Portal } from '@chakra-ui/react'
+import { StatusIcon } from './StatusIcon'
 
 const StatusCell = <TData, TValue>({
   getValue,
@@ -9,6 +10,8 @@ const StatusCell = <TData, TValue>({
   table,
 }: ICellProps<TData, TValue>) => {
   const initialStatus = getValue()
+  const status = statuses.find((status) => status.name === initialStatus)
+  const statusColor = status?.color || 'gray'
 
   const handleStatusChange = (userStatus: string) => {
     table.options.meta?.updateUsers(
@@ -23,7 +26,7 @@ const StatusCell = <TData, TValue>({
       <Menu.Trigger asChild width="100%">
         <Button
           border="none"
-          textAlign="center"
+          justifyContent="flex-start"
           fontSize="{fontSizes.lg}"
           backgroundColor="{colors.surface}"
           textOverflow="ellipsis"
@@ -31,19 +34,20 @@ const StatusCell = <TData, TValue>({
             outline: 'none',
           }}
         >
+          <StatusIcon color={statusColor} />
           {initialStatus}
         </Button>
       </Menu.Trigger>
       <Portal>
         <Menu.Positioner>
           <Menu.Content width={column.getSize()}>
-            {statuses.map((status, i) => (
+            {statuses.map((status) => (
               <Menu.Item
-                value={status}
-                key={i}
-                onClick={() => handleStatusChange(status)}
+                value={status.name}
+                key={status.id}
+                onClick={() => handleStatusChange(status.name)}
               >
-                {status}
+                {status.name}
               </Menu.Item>
             ))}
           </Menu.Content>
