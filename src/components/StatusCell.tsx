@@ -1,7 +1,7 @@
-import { statuses } from '@/lib/utils/fakeData'
 import { ICellProps } from '@/types/types'
 import { Button, Menu, Portal } from '@chakra-ui/react'
-import { StatusIcon } from './StatusIcon'
+import { StatusIcon } from '@components'
+import { statuses } from '@utils/fakeData'
 
 const StatusCell = <TData, TValue>({
   getValue,
@@ -26,6 +26,7 @@ const StatusCell = <TData, TValue>({
       <Menu.Trigger asChild width="100%">
         <Button
           border="none"
+          borderRadius="4px"
           justifyContent="flex-start"
           fontSize="{fontSizes.lg}"
           backgroundColor="{colors.surface}"

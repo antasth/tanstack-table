@@ -1,6 +1,4 @@
-import { DateCell } from '@/components/DateCell'
-import { EditCell } from '@/components/EditCell'
-import { StatusCell } from '@/components/StatusCell'
+import { DateCell, EditCell, StatusCell } from '@/components'
 import { ColumnDef } from '@tanstack/react-table'
 import { TUser } from '@utils/fakeData'
 

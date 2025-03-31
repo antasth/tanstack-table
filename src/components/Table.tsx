@@ -1,6 +1,8 @@
-import { getFakeData, TUser } from '@/lib/utils/fakeData'
+import { USERS_COUNT } from '@/lib/constants'
+import { columns } from '@/lib/table-columns'
 import { Box } from '@chakra-ui/react'
 import {
+  ColumnFilter,
   flexRender,
   getCoreRowModel,
   getFilteredRowModel,
@@ -8,17 +10,20 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table'
+import { getFakeData, TUser } from '@utils/fakeData'
 import { useState } from 'react'
-import { columns } from '../lib/table-columns'
-import { USERS_COUNT } from '@/lib/constants'
 
 function Table() {
   const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
+  const [columnFilters, setColumnFilters] = useState<ColumnFilter[]>([])
 
   console.log(users)
   const table = useReactTable({
     data: users,
     columns,
+    state: {
+      columnFilters,
+    },
     columnResizeMode: 'onChange',
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
