@@ -8,4 +8,7 @@ declare module '@tanstack/react-table' {
       value: TData[TKey]
     ) => void
   }
+  interface ColumnMeta {
+    filterVariant?: 'text' | 'range' | 'select'
+  }
 }
