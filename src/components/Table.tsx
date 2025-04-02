@@ -12,6 +12,7 @@ import {
 } from '@tanstack/react-table'
 import { getFakeData, TUser } from '@utils/fakeData'
 import { useState } from 'react'
+import { Filter } from './Filter'
 
 function Table() {
   const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
@@ -25,6 +26,7 @@ function Table() {
       columnFilters,
     },
     columnResizeMode: 'onChange',
+    onColumnFiltersChange: setColumnFilters,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
@@ -40,7 +42,7 @@ function Table() {
   })
 
   return (
-    <Box>
+    <Box className="container">
       <Box className="table">
         {/* HEADERS */}
         <Box className="table-row">
@@ -62,6 +64,7 @@ function Table() {
                     header.column.getIsResizing() ? 'isResizing' : ''
                   }`}
                 ></Box>
+                <Filter column={header.column} />
               </Box>
             ))
           )}
