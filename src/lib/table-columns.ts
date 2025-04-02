@@ -8,12 +8,18 @@ export const columns: ColumnDef<TUser>[] = [
     header: 'First Name',
     cell: EditCell,
     minSize: 150,
+    meta: {
+      filterVariant: 'text',
+    },
   },
   {
     accessorKey: 'lastName',
     header: 'Last Name',
     cell: EditCell,
     minSize: 150,
+    meta: {
+      filterVariant: 'text',
+    },
   },
   {
     accessorKey: 'age',
@@ -21,6 +27,9 @@ export const columns: ColumnDef<TUser>[] = [
     cell: EditCell,
     size: 50,
     minSize: 50,
+    meta: {
+      filterVariant: 'range',
+    },
   },
   {
     accessorKey: 'username',
@@ -28,12 +37,18 @@ export const columns: ColumnDef<TUser>[] = [
     cell: EditCell,
     size: 250,
     minSize: 150,
+    meta: {
+      filterVariant: 'text',
+    },
   },
   {
     accessorKey: 'createdAt',
     header: 'created At',
     cell: DateCell,
     minSize: 150,
+    meta: {
+      filterVariant: 'text',
+    },
   },
   {
     accessorKey: 'email',
@@ -41,24 +56,17 @@ export const columns: ColumnDef<TUser>[] = [
     cell: EditCell,
     size: 300,
     minSize: 250,
-  },
-  {
-    accessorKey: 'phone',
-    header: 'Phone',
-    cell: EditCell,
-    minSize: 250,
-  },
-  {
-    accessorKey: 'visits',
-    header: 'Visits',
-    cell: EditCell,
-    size: 100,
-    minSize: 100,
+    meta: {
+      filterVariant: 'text',
+    },
   },
   {
     accessorKey: 'status',
     header: 'Status',
     cell: StatusCell,
     minSize: 150,
+    meta: {
+      filterVariant: 'select',
+    },
   },
 ]

@@ -35,7 +35,6 @@ const randomNumber = (min: number, max: number) => {
 
 const createUser = () => {
   const statusChance = Math.random()
-  const visits = Math.floor(Math.random() * 100)
 
   return {
     id: getId(),
@@ -44,10 +43,8 @@ const createUser = () => {
     username: faker.internet.username(),
     age: randomNumber(18, 65),
     email: faker.internet.email(),
-    phone: faker.phone.number(),
     createdAt: faker.date.past(),
 
-    visits,
     status:
       statusChance > 0.75 ? 'online' : statusChance > 0.5 ? 'offline' : 'away',
   }
