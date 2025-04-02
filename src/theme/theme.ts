@@ -10,6 +10,11 @@ const customConfig = defineConfig({
     'html, body': {
       backgroundColor: '{colors.primary}',
     },
+    '.container': {
+      display: 'flex',
+      flexDirection: 'column',
+      gapY: '1rem',
+    },
     '.table': {
       display: 'block',
       border: '1px solid {colors.borderLight}',
