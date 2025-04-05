@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker'
+import { MAX_AGE, MIN_AGE } from '../constants'
 
 export const statuses = [
   {
@@ -41,7 +42,7 @@ const createUser = () => {
     firstName: faker.person.firstName(),
     lastName: faker.person.lastName(),
     username: faker.internet.username(),
-    age: randomNumber(18, 65),
+    age: randomNumber(MIN_AGE, MAX_AGE),
     email: faker.internet.email(),
     createdAt: faker.date.past(),
 
