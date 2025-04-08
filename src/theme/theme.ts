@@ -38,12 +38,25 @@ const customConfig = defineConfig({
       },
     },
     '.table-header': {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
       position: 'relative',
       padding: '0.5rem',
       fontWeight: 'bold',
       textTransform: 'uppercase',
       textAlign: 'center',
       background: '{colors.accent}',
+    },
+    '.table-header-title': {
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '10px',
+    },
+    '.table-header-icon': {
+      cursor: 'pointer',
     },
     '.table-cell': {
       display: 'flex',
