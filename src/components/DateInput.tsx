@@ -10,10 +10,8 @@ const DateInput: React.FC<IDateInputProps> = ({ onChange }) => {
   const [date, setDate] = useState<Date | null>(null)
 
   const handleDateChange = (date: Date | null) => {
-    if (date) {
-      setDate(date)
-      onChange(date)
-    }
+    setDate(date)
+    onChange(date)
   }
 
   return (
@@ -22,6 +20,7 @@ const DateInput: React.FC<IDateInputProps> = ({ onChange }) => {
       wrapperClassName="date-picker-wrapper"
       className="date-picker-input"
       onChange={handleDateChange}
+      isClearable={true}
       portalId="root-portal"
       dateFormat="dd/MM/yyyy"
     />
