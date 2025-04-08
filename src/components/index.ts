@@ -1,5 +1,6 @@
 export { CounterInput } from './CounterInput'
 export { DateCell } from './DateCell'
+export { DateInput } from './DateInput'
 export { DebouncedInput } from './DebouncedInput'
 export { EditCell } from './EditCell'
 export { Filter } from './Filter'

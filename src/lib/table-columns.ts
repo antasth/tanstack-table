@@ -25,8 +25,8 @@ export const columns: ColumnDef<TUser>[] = [
     accessorKey: 'age',
     header: 'Age',
     cell: EditCell,
-    size: 50,
-    minSize: 50,
+    size: 150,
+    minSize: 150,
     meta: {
       filterVariant: 'range',
     },
@@ -47,7 +47,7 @@ export const columns: ColumnDef<TUser>[] = [
     cell: DateCell,
     minSize: 150,
     meta: {
-      filterVariant: 'text',
+      filterVariant: 'date',
     },
   },
   {

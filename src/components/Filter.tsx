@@ -1,4 +1,4 @@
-import { DebouncedInput, RangeInput, SelectInput } from '@components'
+import { DateInput, DebouncedInput, RangeInput, SelectInput } from '@components'
 import { Column } from '@tanstack/react-table'
 
 interface IFilterProps<TData extends object> {
@@ -22,6 +22,10 @@ function Filter<TData extends object>({ column }: IFilterProps<TData>) {
         }
       />
     )
+  }
+
+  if (filterVariant === 'date') {
+    return <DateInput onChange={(value) => column.setFilterValue(value)} />
   }
   return <DebouncedInput onChange={column.setFilterValue} />
 }

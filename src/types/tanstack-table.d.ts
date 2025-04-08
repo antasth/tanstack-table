@@ -9,6 +9,6 @@ declare module '@tanstack/react-table' {
     ) => void
   }
   interface ColumnMeta {
-    filterVariant?: 'text' | 'range' | 'select'
+    filterVariant?: 'text' | 'range' | 'select' | 'date'
   }
 }
