@@ -40,7 +40,7 @@ function Table() {
         ),
     },
   })
-
+  console.log('columnFilters', columnFilters)
   return (
     <Box className="container">
       <Box className="table">

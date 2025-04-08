@@ -11,7 +11,6 @@ const DateCell = <TData, TValue>({
   const date = getValue()
   const selectedDate = new Date(date)
 
-  console.log(date)
   const handleChange = (date: Date | null) => {
     table.options.meta?.updateUsers(
       row.index,
@@ -23,8 +22,9 @@ const DateCell = <TData, TValue>({
     <DatePicker
       selected={selectedDate}
       wrapperClassName="date-picker-wrapper"
-      className="date-picker-input"
+      className="date-picker-ceil"
       popperClassName="date-picker-popper"
+      dateFormat="dd/MM/yyyy"
       onChange={handleChange}
     />
   )

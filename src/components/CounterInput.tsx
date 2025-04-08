@@ -23,21 +23,22 @@ const CounterInput: React.FC<INumberInputProps> = ({
       width={'100%'}
       bg="surface"
       color="text"
-      border="2px solid {colors.borderLight}"
-      _hover={{
-        borderColor: 'accent',
-      }}
-      _focus={{
-        borderColor: 'accent',
-        boxShadow: `0 0 0 1px var(--chakra-colors-accent)`,
-      }}
-      _placeholder={{
-        color: 'textSecondary',
-      }}
       onValueChange={(e) => onChange(Number(e.value))}
     >
       <NumberInput.Control />
-      <NumberInput.Input />
+      <NumberInput.Input
+        border="2px solid {colors.borderLight}"
+        _hover={{
+          borderColor: 'accent',
+        }}
+        _focus={{
+          borderColor: 'accent',
+          boxShadow: `0 0 0 1px var(--chakra-colors-accent)`,
+        }}
+        _placeholder={{
+          color: 'textSecondary',
+        }}
+      />
     </NumberInput.Root>
   )
 }

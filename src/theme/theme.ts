@@ -79,11 +79,26 @@ const customConfig = defineConfig({
     '.date-picker-wrapper': {
       width: '100%',
     },
-    '.date-picker-input': {
+    '.date-picker-ceil, .date-picker-input': {
       width: '100%',
       padding: '8px 12px',
       textAlign: 'center',
       background: '{colors.surface}',
+    },
+    '.date-picker-input': {
+      borderRadius: '6px',
+      height: '100%',
+      border: '2px solid {colors.borderLight}',
+
+      '&:hover': {
+        borderColor: '{accent}',
+      },
+      '&:focus': {
+        cursor: 'pointer',
+        outline: '1px solid {colors.surface}',
+        borderColor: '{accent}',
+        boxShadow: `0 0 0 1px var(--chakra-colors-accent)`,
+      },
     },
   },
   theme: {
