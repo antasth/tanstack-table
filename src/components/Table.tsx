@@ -1,6 +1,6 @@
 import { USERS_COUNT } from '@/lib/constants'
 import { columns } from '@/lib/table-columns'
-import { Box } from '@chakra-ui/react'
+import { Box, Icon } from '@chakra-ui/react'
 import {
   ColumnFilter,
   flexRender,
@@ -11,6 +11,7 @@ import {
   useReactTable,
 } from '@tanstack/react-table'
 import { getFakeData, TUser } from '@utils/fakeData'
+import { ArrowDownUp } from 'lucide-react'
 import { useState } from 'react'
 import { Filter } from './Filter'
 
@@ -53,10 +54,22 @@ function Table() {
                 key={header.id}
                 width={`${header.getSize()}px`}
               >
-                {flexRender(
-                  header.column.columnDef.header,
-                  header.getContext()
-                )}
+                <Box className="table-header-title">
+                  {flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+
+                  {header.column.getCanSort() && (
+                    <Icon
+                      size="sm"
+                      className="table-header-icon"
+                      onClick={header.column.getToggleSortingHandler()}
+                    >
+                      <ArrowDownUp />
+                    </Icon>
+                  )}
+                </Box>
                 <Box
                   onMouseDown={header.getResizeHandler()}
                   onTouchStart={header.getResizeHandler()}
