@@ -49,6 +49,18 @@ export const columns: ColumnDef<TUser>[] = [
     meta: {
       filterVariant: 'date',
     },
+    filterFn: (row, columnId, filterValue) => {
+      if (!filterValue) return true
+
+      const rowDate = new Date(row.getValue(columnId))
+      const filterDate = new Date(filterValue)
+
+      return (
+        rowDate.getFullYear() === filterDate.getFullYear() &&
+        rowDate.getMonth() === filterDate.getMonth() &&
+        rowDate.getDate() === filterDate.getDate()
+      )
+    },
   },
   {
     accessorKey: 'email',
