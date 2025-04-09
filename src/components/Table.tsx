@@ -1,4 +1,4 @@
-import { USERS_COUNT } from '@/lib/constants'
+import { ROWS_ON_PAGE, USERS_COUNT } from '@/lib/constants'
 import { columns } from '@/lib/table-columns'
 import { Box, Icon } from '@chakra-ui/react'
 import {
@@ -14,6 +14,7 @@ import { getFakeData, TUser } from '@utils/fakeData'
 import { ArrowDownUp } from 'lucide-react'
 import { useState } from 'react'
 import { Filter } from './Filter'
+import { TablePagination } from './Pagination'
 
 function Table() {
   const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
@@ -44,6 +45,13 @@ function Table() {
   console.log('columnFilters', columnFilters)
   return (
     <Box className="container">
+      <TablePagination
+        pageSize={ROWS_ON_PAGE}
+        count={table.getPrePaginationRowModel().rows.length}
+        next={table.nextPage}
+        prev={table.previousPage}
+        setPage={table.setPagination}
+      />
       <Box className="table">
         {/* HEADERS */}
         <Box className="table-row">
