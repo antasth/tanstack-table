@@ -41,7 +41,6 @@ function Table() {
         ),
     },
   })
-  console.log('Table render')
   return (
     <Box className="container">
       <TablePagination
