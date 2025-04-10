@@ -1,5 +1,13 @@
 # Advanced Data Table with TanStack Table and Chakra UI
 
+## <img src="https://raw.githubusercontent.com/antasth/images-for-readme.md/main/TanstackTable/tanstacktable1.png" width="100%"></img>
+
+---
+
+[Deploy](https://antasth.github.io/tanstack-table/)
+
+---
+
 ## Project Overview
 
 A feature-rich, data table implementation built with TanStack Table v8 and Chakra UI, demonstrating modern React table capabilities.
