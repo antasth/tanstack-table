@@ -1,4 +1,9 @@
-import { DateInput, DebouncedInput, RangeInput, SelectInput } from '@components'
+import {
+  DateInput,
+  DebouncedInput,
+  RangeInput,
+  SelectInput,
+} from '@components/inputs'
 import { Column } from '@tanstack/react-table'
 
 interface IFilterProps<TData extends object> {

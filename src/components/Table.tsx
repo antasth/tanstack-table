@@ -20,7 +20,6 @@ function Table() {
   const [users, setUsers] = useState<TUser[]>(getFakeData(USERS_COUNT))
   const [columnFilters, setColumnFilters] = useState<ColumnFilter[]>([])
 
-  console.log(users)
   const table = useReactTable({
     data: users,
     columns,
@@ -42,7 +41,7 @@ function Table() {
         ),
     },
   })
-  console.log('columnFilters', columnFilters)
+  console.log('Table render')
   return (
     <Box className="container">
       <TablePagination
