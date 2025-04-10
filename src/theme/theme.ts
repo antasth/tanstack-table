@@ -98,6 +98,13 @@ const customConfig = defineConfig({
       textAlign: 'center',
       background: '{colors.surface}',
     },
+    '.date-picker-ceil': {
+      borderRadius: '4px',
+      border: 'none',
+      '&:focus': {
+        outline: '2px solid {colors.accent}',
+      },
+    },
     '.date-picker-input': {
       borderRadius: '6px',
       height: '100%',
@@ -112,6 +119,9 @@ const customConfig = defineConfig({
         borderColor: '{accent}',
         boxShadow: `0 0 0 1px var(--chakra-colors-accent)`,
       },
+    },
+    '.pagination': {
+      alignSelf: 'start',
     },
   },
   theme: {
